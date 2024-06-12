@@ -1,6 +1,4 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +16,18 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "background_color": "#ffffff",
+  "categories": ["pokemon", "comics"],
+  "description": "Esta es una PWA para prueba técnica de Enmedio",
+  "dir": "ltr",
+  "display_override": ["standalone", "fullscreen"],
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "lang": "es-CO",
+  "name": "PWA Pokemon prueba Enmedio",
+  "orientation": "portrait",
+  "prefer_releated_application": false,
+  "scope":"/",
+  "short_name": "PWA POKEMON",
+  "start_url": "/",
+  "theme_color": "orange"
 }

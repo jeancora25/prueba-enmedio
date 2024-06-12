@@ -8,18 +8,21 @@ import PokemonDetailsPage from './pages/PokemonDetailsPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProtectedRoutes from './services/ProtectedRoutes';
 import './App.css';
+import Layout from './components/Layout';
 
 function App() {    
     return (
-        <Routes>
-            <Route path="/" element={<LoginForm />} />
-            <Route path="/register" element={<RegisterForm />} />
-            <Route path='/*' element={<ProtectedRoutes />} >
-                <Route path="home" element={<Home />} />
-                <Route path="pokemon-list" element={<PokemonListPage />} />
-                <Route path="pokemon-details/:id" element={<PokemonDetailsPage />} />
-            </Route>
-        </Routes>
+        <Layout>
+            <Routes>
+                <Route path="/" element={<LoginForm />} />
+                <Route path="/register" element={<RegisterForm />} />
+                <Route path='/*' element={<ProtectedRoutes />} >
+                    <Route path="home" element={<Home />} />
+                    <Route path="pokemon-list" element={<PokemonListPage />} />
+                    <Route path="pokemon-details/:id" element={<PokemonDetailsPage />} />
+                </Route>
+            </Routes>
+        </Layout>
     );
 }
 
