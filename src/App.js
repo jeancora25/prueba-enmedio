@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import { useFetch } from './useFetch';
 import './App.css';
 
 function App() {
+const { data } = useFetch("https://pokeapi.co/api/v2/pokemon?limit=50");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="card">
+        <ul>
+          {data?.results.map((item) => (
+            <li key={item.name}>{item.name}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
