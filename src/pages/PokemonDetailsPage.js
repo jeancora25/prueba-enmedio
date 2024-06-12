@@ -10,7 +10,7 @@ function PokemonDetailsPage() {
         <div>
             <CustomNavbar />
             <div className="container mt-3">
-                <h1>Pokemon Details</h1>
+                <h1>Detalles del Pokémon</h1>
                 <PokemonDetails id={id} />
             </div>
         </div>

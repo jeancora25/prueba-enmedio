@@ -11,13 +11,20 @@ function PokemonDetails({ id }) {
 
     return (
         <div>
-            <h1>Detalles del Pokémon</h1>
-             <div className="card">
-            <div className="card-body">
-                <h3 className="card-title">{data.name}</h3>
-                
+            <div className="container mt-3 pt-5 w-25">
+                    <h1 className="text-center">{data.name}</h1>
+                    <div className="card">
+                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`} class="card-img-top" alt="..."/>
+                    <div className="card-body">
+                        <h3 className="card-title">Habilidades:</h3>
+                        {data?.abilities.map((item) => (
+                        <li className="list-group-item">
+                            {item.ability.name}
+                        </li>
+                    ))}
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     );
 }

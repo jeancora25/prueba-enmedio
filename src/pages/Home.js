@@ -8,8 +8,8 @@ function Home() {
             <CustomNavbar />
             <div className="container mt-3">
                 <h1>¡Mundo Pokemón!</h1>
+                <p class="card-text">Selecciona en la barra de navegación la pokedex para ver todos los pokemones.</p>
                     <Link to="/pokemon-list" />
-                    {/* Definir otras rutas futuras aquí */}
             </div>
         </div>
     );

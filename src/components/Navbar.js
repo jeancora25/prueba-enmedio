@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function CustomNavbar() {
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("loggedin");
+        navigate("/");
+    }
+
     return (
         <div className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
@@ -15,11 +23,13 @@ function CustomNavbar() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/pokemon-list">Pokedex</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/pokemon-details">Pokemon List</Link>
-                        </li>
                     </ul>
                 </div>
+            </div>
+            <div class="d-flex">
+                <button 
+                onClick={handleLogout}
+                class="btn btn-outline-success" type="submit"> Cerrar sesión</button>
             </div>
         </div>
     );
